@@ -20,16 +20,19 @@ public class RasterizationController {
     private void initialize() {
         anchorPane.prefWidthProperty().addListener((ov, oldValue, newValue) -> canvas.setWidth(newValue.doubleValue()));
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
-
-        Rasterization.fillTriangle(canvas.getGraphicsContext2D(),
+        GraphicsUtils graphicsUtils = new DrawUtilsJavaFX(canvas);
+        Rasterization.fillTriangle(graphicsUtils,
                 new Point2D(10,10), new Point2D(200,400), new Point2D(300,200),
-                Color.RED, Color.LIGHTGREEN,Color.BLUE);
-        Rasterization.fillTriangle(canvas.getGraphicsContext2D(),
+                MyColor.RED, MyColor.GREEN,MyColor.BLUE);
+        Rasterization.fillTriangle(graphicsUtils,
                 new Point2D(400,500), new Point2D(600,300), new Point2D(500,500),
-                Color.RED, Color.LIGHTGREEN,Color.BLUE);
-        Rasterization.fillTriangle(canvas.getGraphicsContext2D(),
+                MyColor.RED, MyColor.GREEN,MyColor.BLUE);
+        Rasterization.fillTriangle(graphicsUtils,
                 new Point2D(500,100), new Point2D(400,300), new Point2D(300,200),
-                Color.RED, Color.LIGHTGREEN,Color.BLUE);
+                MyColor.RED, MyColor.GREEN,MyColor.BLUE);
+        Rasterization.fillTriangle(graphicsUtils,
+                new Point2D(200,100), new Point2D(500,100), new Point2D(300,200),
+                MyColor.RED, MyColor.GREEN,MyColor.BLUE);
     }
 
 }
