@@ -1,13 +1,13 @@
 package com.cgvsu.rasterizationfxapp;
 
+import com.cgvsu.rasterization.DrawUtilsJavaFX;
+import com.cgvsu.rasterization.GraphicsUtils;
+import com.cgvsu.rasterization.MyColor;
+import com.cgvsu.rasterization.Rasterization;
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.AnchorPane;
-
-import com.cgvsu.rasterization.*;
-import javafx.scene.paint.Color;
 
 public class RasterizationController {
 
@@ -21,6 +21,8 @@ public class RasterizationController {
         anchorPane.prefWidthProperty().addListener((ov, oldValue, newValue) -> canvas.setWidth(newValue.doubleValue()));
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
         GraphicsUtils graphicsUtils = new DrawUtilsJavaFX(canvas);
+
+        //Here are some examples of how to work with it
         Rasterization.fillTriangle(graphicsUtils,
                 new Point2D(10,10), new Point2D(200,400), new Point2D(300,200),
                 MyColor.RED, MyColor.GREEN,MyColor.BLUE);

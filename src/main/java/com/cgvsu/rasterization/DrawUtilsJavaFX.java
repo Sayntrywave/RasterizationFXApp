@@ -2,19 +2,19 @@ package com.cgvsu.rasterization;
 
 
 import javafx.scene.canvas.Canvas;
+import javafx.scene.paint.Color;
 
-public class DrawUtilsJavaFX extends GraphicsUtils <Canvas>{
+public class DrawUtilsJavaFX extends GraphicsUtils<Canvas> {
     public DrawUtilsJavaFX(Canvas graphics) {
         super(graphics);
     }
 
     @Override
     public void setPixel(int x, int y, MyColor myColor) {
-        graphics.getGraphicsContext2D().getPixelWriter().setColor(x,y,toColor(myColor));
+        graphics.getGraphicsContext2D().getPixelWriter().setColor(x, y, toColor(myColor));
     }
-    private javafx.scene.paint.Color toColor(MyColor myColor){
-      //
-        //  System.out.println(myColor.getRed() + myColor.getGreen() + myColor.getBlue());
-        return javafx.scene.paint.Color.color(myColor.getRed(), myColor.getGreen(), myColor.getBlue());
+
+    private Color toColor(MyColor myColor) {
+        return Color.color(myColor.getRed(), myColor.getGreen(), myColor.getBlue());
     }
 }
