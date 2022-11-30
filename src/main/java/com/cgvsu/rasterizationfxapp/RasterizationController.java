@@ -22,6 +22,11 @@ public class RasterizationController {
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
         GraphicsUtils graphicsUtils = new DrawUtilsJavaFX(canvas);
 
+
+        Rasterization.fillTriangle(graphicsUtils,
+                new Point2D(768,396), new Point2D(768,251.02536), new Point2D(622.8789,251.02536),
+                MyColor.BLUE, MyColor.BLUE,MyColor.BLUE);
+
         //Here are some examples of how to work with it
         Rasterization.fillTriangle(graphicsUtils,
                 new Point2D(10,10), new Point2D(200,400), new Point2D(300,200),

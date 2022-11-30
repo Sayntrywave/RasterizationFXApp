@@ -16,8 +16,7 @@ public class DrawUtilsSwing extends GraphicsUtils<Graphics> {
     }
 
     private Color toColor(MyColor myColor) {
-        Color color1 = new java.awt.Color((int) (255 * myColor.getRed()), (int) (255 * myColor.getGreen()), (int) (255 * myColor.getBlue()));
-        return color1;
+        return new Color((int) (255 * myColor.getRed()), (int) (255 * myColor.getGreen()), (int) (255 * myColor.getBlue()));
     }
 
 

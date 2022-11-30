@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Rasterization {
 
-
+    //todo: сделать @param Point2D общим
     public static void fillTriangle(
             final GraphicsUtils gr,
             Point2D p1, Point2D p2, Point2D p3,
@@ -27,14 +27,14 @@ public class Rasterization {
         double y2 = points.get(1).getY();
         double y3 = points.get(2).getY();
 
-        for (int y = (int) y1; y < y2; y++) {
+        for (int y = (int) (y1 + 1); y <= y2; y++) {
             double startX = getX(y, x1, x2, y1, y2);
             double endX = getX(y, x1, x3, y1, y3);
 
             fillLine(gr, y, startX, endX, myColor1, myColor2, myColor3, x1, x2, x3, y1, y2, y3);
         }
 
-        for (int y = (int) y2; y < y3; y++) {
+        for (int y = (int) (y2 + 1); y < y3; y++) {
             double startX = getX(y, x1, x3, y1, y3);
             double endX = getX(y, x2, x3, y2, y3);
             fillLine(gr, y, startX, endX, myColor1, myColor2, myColor3, x1, x2, x3, y1, y2, y3);
@@ -67,7 +67,7 @@ public class Rasterization {
             endX = temp;
         }
 
-        for (int x = (int) startX; x < endX; x++) {
+        for (int x = (int) startX + 1; x < endX; x++) {
             gr.setPixel(x, y, getColor(myColor1, myColor2, myColor3, x, y, x1, x2, x3, y1, y2, y3));
         }
     }
@@ -82,28 +82,15 @@ public class Rasterization {
         double detT = (y2 - y3) * (x1 - x3) + (x3 - x2) * (y1 - y3);
 
         double alpha = ((y2 - y3) * (x - x3) + (x3 - x2) * (y - y3)) / detT;
-        if (alpha < 0 || alpha > 1) {
-            alpha = Math.round(alpha);
-        }
 
         double betta = ((y3 - y1) * (x - x3) + (x1 - x3) * (y - y3)) / detT;
-        if (betta < 0 || betta > 1) {
-            betta = Math.round(betta);
-        }
 
         double gamma = 1 - alpha - betta;
-
-        if (gamma < 0 || gamma > 1) {
-            gamma = Math.round(gamma);
-        }
-
 
         double r = (alpha * myColor1.getRed() + betta * myColor2.getRed() + gamma * myColor3.getRed());
         double g = (alpha * myColor1.getGreen() + betta * myColor2.getGreen() + gamma * myColor3.getGreen());
         double b = (alpha * myColor1.getBlue() + betta * myColor2.getBlue() + gamma * myColor3.getBlue());
 
-
-        System.out.println(alpha + " " + betta + " " + gamma);
         return new MyColor(r, g, b);
     }
 
