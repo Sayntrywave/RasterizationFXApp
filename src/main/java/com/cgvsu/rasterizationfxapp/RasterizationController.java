@@ -24,21 +24,21 @@ public class RasterizationController {
 
 
         Rasterization.fillTriangle(graphicsUtils,
-                new Point2D(768,396), new Point2D(768,251.02536), new Point2D(622.8789,251.02536),
+                768,396, 768,251.02536, 622.8789,251.02536,
                 MyColor.BLUE, MyColor.BLUE,MyColor.BLUE);
 
         //Here are some examples of how to work with it
         Rasterization.fillTriangle(graphicsUtils,
-                new Point2D(10,10), new Point2D(200,400), new Point2D(300,200),
+                10,10, 200,400, 300,200,
                 MyColor.RED, MyColor.GREEN,MyColor.BLUE);
         Rasterization.fillTriangle(graphicsUtils,
-                new Point2D(400,500), new Point2D(600,300), new Point2D(500,500),
+                400,500, 600,300, 500,500,
                 MyColor.RED, MyColor.GREEN,MyColor.BLUE);
         Rasterization.fillTriangle(graphicsUtils,
-                new Point2D(500,100), new Point2D(400,300), new Point2D(300,200),
+                500,100, 400,300, 300,200,
                 MyColor.RED, MyColor.GREEN,MyColor.BLUE);
         Rasterization.fillTriangle(graphicsUtils,
-                new Point2D(200,100), new Point2D(500,100), new Point2D(300,200),
+                200,100, 500,100, 300,200,
                 MyColor.RED, MyColor.GREEN,MyColor.BLUE);
     }
 
