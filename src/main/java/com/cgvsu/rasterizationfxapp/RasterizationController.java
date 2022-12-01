@@ -5,7 +5,6 @@ import com.cgvsu.rasterization.GraphicsUtils;
 import com.cgvsu.rasterization.MyColor;
 import com.cgvsu.rasterization.Rasterization;
 import javafx.fxml.FXML;
-import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.AnchorPane;
 
@@ -24,22 +23,22 @@ public class RasterizationController {
 
 
         Rasterization.fillTriangle(graphicsUtils,
-                768,396, 768,251.02536, 622.8789,251.02536,
-                MyColor.BLUE, MyColor.BLUE,MyColor.BLUE);
+                768, 396, 768, 251.02536, 622.8789, 251.02536,
+                MyColor.BLUE, MyColor.BLUE, MyColor.BLUE);
 
         //Here are some examples of how to work with it
         Rasterization.fillTriangle(graphicsUtils,
-                10,10, 200,400, 300,200,
-                MyColor.RED, MyColor.GREEN,MyColor.BLUE);
+                10, 10, 200, 400, 300, 200,
+                MyColor.RED, MyColor.GREEN, MyColor.BLUE);
         Rasterization.fillTriangle(graphicsUtils,
-                400,500, 600,300, 500,500,
-                MyColor.RED, MyColor.GREEN,MyColor.BLUE);
+                400, 500, 600, 300, 500, 500,
+                MyColor.RED, MyColor.GREEN, MyColor.BLUE);
         Rasterization.fillTriangle(graphicsUtils,
-                500,100, 400,300, 300,200,
-                MyColor.RED, MyColor.GREEN,MyColor.BLUE);
+                500, 100, 400, 300, 300, 200,
+                MyColor.RED, MyColor.GREEN, MyColor.BLUE);
         Rasterization.fillTriangle(graphicsUtils,
-                200,100, 500,100, 300,200,
-                MyColor.RED, MyColor.GREEN,MyColor.BLUE);
+                200, 100, 500, 100, 300, 200,
+                MyColor.RED, MyColor.GREEN, MyColor.BLUE);
     }
 
 }

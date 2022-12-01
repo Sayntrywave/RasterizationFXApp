@@ -1,7 +1,5 @@
 package com.cgvsu.rasterization;
 
-import javafx.geometry.Point2D;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -26,7 +24,7 @@ public class Rasterization {
         double y2 = points.get(1).getY();
         double y3 = points.get(2).getY();
 
-        for (int y =  (int) Math.round(y1 + 0.5); y <= y2; y++) {
+        for (int y = (int) Math.round(y1 + 0.5); y <= y2; y++) {
             double startX = getX(y, x1, x2, y1, y2);
             double endX = getX(y, x1, x3, y1, y3);
 
@@ -46,7 +44,7 @@ public class Rasterization {
             double x2, double y2,
             double x3, double y3,
             MyColor myColor1, MyColor myColor2, MyColor myColor3) {
-        fillTriangle(gr, new MyPoint2D(x1,y1), new MyPoint2D(x2, y2), new MyPoint2D(x3, y3), myColor1, myColor2, myColor3);
+        fillTriangle(gr, new MyPoint2D(x1, y1), new MyPoint2D(x2, y2), new MyPoint2D(x3, y3), myColor1, myColor2, myColor3);
     }
 
     private static double getX(double y, double x1, double x2, double y1, double y2) {
@@ -65,7 +63,7 @@ public class Rasterization {
             endX = temp;
         }
 
-        for (int x = (int) startX + 1; x < endX; x++) {
+        for (int x = (int) Math.round(startX + 0.5); x < endX; x++) {
             gr.setPixel(x, y, getColor(myColor1, myColor2, myColor3, x, y, x1, x2, x3, y1, y2, y3));
         }
     }
