@@ -26,14 +26,14 @@ public class Rasterization {
         double y2 = points.get(1).getY();
         double y3 = points.get(2).getY();
 
-        for (int y = (int) (y1 + 1); y <= y2; y++) {
+        for (int y =  (int) Math.round(y1 + 0.5); y <= y2; y++) {
             double startX = getX(y, x1, x2, y1, y2);
             double endX = getX(y, x1, x3, y1, y3);
 
             fillLine(gr, y, startX, endX, myColor1, myColor2, myColor3, x1, x2, x3, y1, y2, y3);
         }
 
-        for (int y = (int) (y2 + 1); y < y3; y++) {
+        for (int y = (int) Math.round(y2 + 0.5); y < y3; y++) {
             double startX = getX(y, x1, x3, y1, y3);
             double endX = getX(y, x2, x3, y2, y3);
             fillLine(gr, y, startX, endX, myColor1, myColor2, myColor3, x1, x2, x3, y1, y2, y3);
